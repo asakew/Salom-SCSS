@@ -1,6 +1,12 @@
+// sass --watch scss:css
 $bgColor: cyan;
-$AColor:  red;
+$bgOr: orange; 
+$orr: orangered; 
+$RColor:  red;
+$WColor:  white;
+$BColor: black;
 $padding: 11px;
+$Tright: right;
 
 * {
 	padding: 0;
@@ -9,8 +15,22 @@ $padding: 11px;
 
 body {
 	background: $bgColor;
-	color: $AColor;
+	color: $WColor;
 	padding: $padding;
+}
+
+.list {
+	color: $orr; 
+		ul {
+			text-transform: uppercase;
+			font-size: 2em;
+			font-weight: bold;
+			font-style: italic;
+
+			li {
+				text-align: center;
+			}
+		}
 }
 
 .block{
@@ -18,4 +38,3 @@ background: green;
 margin: 1em 0;
 font-size: 1em;
 }
-// sass -watch scss:css
