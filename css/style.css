@@ -4,7 +4,7 @@
 }
 
 body {
-  background: cyan;
+  background: black;
   color: white;
   padding: 11px;
 }
@@ -14,12 +14,30 @@ body {
 }
 .list ul {
   text-transform: uppercase;
-  font-size: 2em;
-  font-weight: bold;
+  font-size: 1em;
+  font-weight: bolder;
+  font-family: times;
   font-style: italic;
+  color: red;
 }
 .list ul li {
   text-align: center;
+}
+
+.list-2 {
+  background: red;
+  margin: 50px 30px 60px 200px;
+  padding: 10px 30px 60px 100px;
+}
+.list-2 ul {
+  list-style: none;
+  border: green 10px groove;
+  background: red;
+  color: black;
+}
+.list-2 ul li {
+  text-align: center;
+  margin: 1em;
 }
 
 .block {

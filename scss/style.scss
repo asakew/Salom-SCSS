@@ -14,23 +14,55 @@ $Tright: right;
 }
 
 body {
-	background: $bgColor;
+	background: $BColor;
 	color: $WColor;
 	padding: $padding;
+}
+
+@mixin font($color, $fsize) {
+	font-size: $fsize;
+	font-weight: bolder; 
+	font-family: times;
+	font-style: italic;
+	color: $color;
 }
 
 .list {
 	color: $orr; 
 		ul {
 			text-transform: uppercase;
-			font-size: 2em;
-			font-weight: bold;
-			font-style: italic;
+			@include font(red, 1em);
 
 			li {
 				text-align: center;
 			}
 		}
+}
+
+@mixin border($textColor: black, $bgc) {
+	border: green 10px groove;
+	background: $bgc;
+	color: $textColor;
+} 
+@mixin pdd($pdd...) {
+	padding: $pdd;
+}
+@mixin mar($mar...) {
+	margin: $mar;
+}
+
+.list-2 {
+	background: $RColor;
+	@include mar( 50px 30px 60px 200px);
+	@include pdd( 10px 30px 60px 100px);
+	 ul {
+	 		list-style: none;; 
+			@include border($bgc: red);
+				li {
+					text-align: center;
+					margin: 1em;
+				}
+	 }
 }
 
 .block{
