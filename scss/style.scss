@@ -4,6 +4,16 @@
 @import "variables";
 @import "mixins";
 
+* { margin: 0; padding: 0;}
+
+#grid {
+	float: left;
+	width: 100%;
+	> div {
+		@include grid(4, 2%);
+	}
+}
+
 a {
 	@include link(white, red, blue, cyan);
 }
@@ -19,6 +29,7 @@ body {
 
 header {
 	@include bg-red(black);
+	width: (100% + 10%);
 		nav a {
 			@include bg-cyan;
 				&:hover {
@@ -64,10 +75,4 @@ header {
 					color: $oq;
 				}
 	 }
-}
-
-.block{
-background: green;
-margin: 1em 0;
-font-size: 1em;
 }

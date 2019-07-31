@@ -64,3 +64,16 @@
 		}
 }
 }
+
+@mixin grid($cols, $margin) {
+	width: ((100% - (($cols - 1) * $margin)) / $cols);
+	height: 170px;
+	float: left;
+	margin-right: $margin;
+	margin-bottom: $margin;
+	background-color: red;
+	
+	&:nth-child(#{$cols}n){
+		margin-right: 0;
+	}
+}
