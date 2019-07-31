@@ -1,66 +1,84 @@
 // sass --watch scss:css
-$bgColor: cyan;
-$bgOr: orange; 
+$cyn: cyan;
+$danger: darkorange; 
 $orr: orangered; 
-$RColor:  red;
-$WColor:  white;
-$BColor: black;
-$padding: 11px;
+$red:  red;
+$oq:  hsla(0,0%,100.0%,1);
+$qora: hsla(0,0%,0.0%,1);
+$green: hsla(120.0,100.0%,50.0%,1);
+$padding: 1em;
 $Tright: right;
 
-* {
-	padding: 0;
-	margin: 0;
+// mixin 1-ulus 
+@mixin fyashil {
+	background-color : $green;
+	color : $oq;
+} @mixin fqora {
+	background-color : $qora;
+	color : $oq;
+} @mixin qizilFon  {
+	background-color : $red;
+	color : $oq;
+} @mixin fdo {
+	background-color: $danger;
+	color: $qora;
 }
+@mixin m-p { margin: 0; padding: 0; }
+
+// mixin 2-ulus 
+@mixin font($fcolor, $fsize, $fweight) {
+	font-size: $fsize; // uzgaruvchan
+	font-weight: $fweight; // uzgaruvchan
+	font-family: times;	// uzgaruvchan
+	font-style: italic; // uzgarmas
+	color: $fcolor; // uzgaruvchan
+}
+
+// mixin 3-usul 
+@mixin pdd($pdd...) {
+	padding: $pdd;
+} @mixin mar($mar...) {
+	margin: $mar;
+}
+
 
 body {
-	background: $BColor;
-	color: $WColor;
-	padding: $padding;
+	@include fqora;
+	@include font($green, 1em, 400);
+	@include pdd(10px 40px 70px 100px);
 }
 
-@mixin font($color, $fsize) {
-	font-size: $fsize;
-	font-weight: bolder; 
-	font-family: times;
-	font-style: italic;
-	color: $color;
+
+
+.test {
+	@include fdo;
+	@include mar(10px 40px 70px 100px);
 }
 
 .list {
 	color: $orr; 
 		ul {
 			text-transform: uppercase;
-			@include font(red, 1em);
+			@include font(red, 1em, 400);
 
 			li {
+				@include fyashil;
 				text-align: center;
+				color: $oq;
 			}
 		}
 }
 
-@mixin border($textColor: black, $bgc) {
-	border: green 10px groove;
-	background: $bgc;
-	color: $textColor;
-} 
-@mixin pdd($pdd...) {
-	padding: $pdd;
-}
-@mixin mar($mar...) {
-	margin: $mar;
-}
-
 .list-2 {
-	background: $RColor;
-	@include mar( 50px 30px 60px 200px);
+	background: $qora;
+	@include mar( 50px 30px 200px 200px);
 	@include pdd( 10px 30px 60px 100px);
 	 ul {
-	 		list-style: none;; 
-			@include border($bgc: red);
+	 		list-style: none;
 				li {
 					text-align: center;
 					margin: 1em;
+					color: $oq;
 				}
 	 }
 }
