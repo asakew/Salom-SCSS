@@ -1,0 +1,66 @@
+// mixin 1-ulus 
+@mixin fyashil {
+	background-color : $green;
+	color : $oq;
+} @mixin fqora {
+	background-color : $qora;
+	color : $oq;
+} @mixin qizilFon  {
+	background-color : $red;
+	color : $oq;
+} @mixin fdo {
+	background-color: $danger;
+	color: $qora;
+}
+@mixin m-p { margin: 0; padding: 0; }
+
+// mixin 2-ulus 
+@mixin font($fcolor, $fsize, $fweight) {
+	font-size: $fsize; // uzgaruvchan
+	font-weight: $fweight; // uzgaruvchan
+	font-family: times;	// uzgaruvchan
+	font-style: italic; // uzgarmas
+	color: $fcolor; // uzgaruvchan
+} @mixin bg-dark($bcolor, $tcolor) {
+	background-color: $bcolor;
+	color: $tcolor;
+} @mixin bg-red($tcolor, $bcolor: red) {
+	background-color: $bcolor;
+	color: $tcolor;
+} @mixin bg-cyan($bcolor: cyan, $tcolor: red) {
+	background-color: $bcolor;
+	color: $tcolor;
+}
+
+// mixin 3-usul 
+@mixin pdd($pdd...) {
+	padding: $pdd;
+} @mixin mar($mar...) {
+	margin: $mar;
+}
+
+@mixin link($link, $hover, $active, $visited){
+	color: #link;
+		&:hover {
+			color: $hover;
+		}		&:active {
+			color: $active;
+		}		&:visited {
+			color: $visited;
+		}
+}
+
+@mixin navlink($link, $hover, $active, $visited){
+.nav {	
+	a	{
+		color: #link;
+			&:hover {
+				color: $hover;
+			}		&:active {
+				color: $active;
+			}		&:visited {
+				color: $visited;
+			}
+		}
+}
+}

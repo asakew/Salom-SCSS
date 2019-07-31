@@ -1,55 +1,14 @@
 // sass --watch scss:css
-$cyn: cyan;
-$danger: darkorange; 
-$orr: orangered; 
-$red:  red;
-$oq:  hsla(0,0%,100.0%,1);
-$qora: hsla(0,0%,0.0%,1);
-$green: hsla(120.0,100.0%,50.0%,1);
-$padding: 1em;
-$Tright: right;
+// sass --watch starter.scss:css/style.css
 
-// mixin 1-ulus 
-@mixin fyashil {
-	background-color : $green;
-	color : $oq;
-} @mixin fqora {
-	background-color : $qora;
-	color : $oq;
-} @mixin qizilFon  {
-	background-color : $red;
-	color : $oq;
-} @mixin fdo {
-	background-color: $danger;
-	color: $qora;
-}
-@mixin m-p { margin: 0; padding: 0; }
+@import "variables";
+@import "mixins";
 
-// mixin 2-ulus 
-@mixin font($fcolor, $fsize, $fweight) {
-	font-size: $fsize; // uzgaruvchan
-	font-weight: $fweight; // uzgaruvchan
-	font-family: times;	// uzgaruvchan
-	font-style: italic; // uzgarmas
-	color: $fcolor; // uzgaruvchan
-} @mixin bg-dark($bcolor, $tcolor) {
-	background-color: $bcolor;
-	color: $tcolor;
-} @mixin bg-red($tcolor, $bcolor: red) {
-	background-color: $bcolor;
-	color: $tcolor;
-} @mixin bg-cyan($bcolor: cyan, $tcolor: red) {
-	background-color: $bcolor;
-	color: $tcolor;
+a {
+	@include link(white, red, blue, cyan);
 }
 
-// mixin 3-usul 
-@mixin pdd($pdd...) {
-	padding: $pdd;
-} @mixin mar($mar...) {
-	margin: $mar;
-}
-
+@include navlink(white, red, blue, cyan); 
 
 body {
 	@include fqora;
@@ -62,8 +21,17 @@ header {
 	@include bg-red(black);
 		nav a {
 			@include bg-cyan;
+				&:hover {
+					color: $danger;
+					padding: 10px;
+				}
+				&:after {
+					content: " test";
+				}
 		}
 } 
+
+
 
 .test {
 	@include fdo;
